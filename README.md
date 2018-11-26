@@ -20,7 +20,7 @@ Your company's front end team has completed a business dashboard requested by ma
   * /newComments
   * /newTasks
   * /newOrders
-  * /tickets
+  * /tickets 
 
 ### Database
 * use mlab to create a database
