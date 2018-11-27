@@ -3,11 +3,11 @@ const app = express();
 const PORT = 3001;
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-// const commentRoutes = require("./routes/commentRoutes");
-// const taskRoutes = require("./routes/taskRoutes");
-// const ticketRoutes = require("./routes/ticketRoutes");
+const messageRoutes = require("./routes/messageRoutes");
+const orderRoutes = require("./routes/orderRoutes");
+const taskRoutes = require("./routes/taskRoutes");
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://<checkpoint1_user>:<checkpoint1>@ds259210.mlab.com:59210/checkpoint1")
+mongoose.connect("mongodb://checkpoint1_user:checkpoint1@ds259210.mlab.com:59210/checkpoint1")
 
 app.use(express.static("public"));
 
@@ -15,6 +15,7 @@ app.use(express.static("public"));
 app.listen(PORT, () => {
     console.log(`The server is listening on port ${PORT}`);
 });
+
 
 app.get("/dateTime", (req,res,next) => {
     res.send(new Date());
@@ -37,9 +38,9 @@ app.get("/tickets", (req,res,next) => {
 })
 
 app.use(bodyParser.json());
-// app.use(commentRoutes);
-// app.use(taskRoutes);
-// app.use(ticketRoutes);
+app.use(messageRoutes);
+app.use(orderRoutes);
+app.use(taskRoutes);
 
 // app.listen(3001, (err) => {
 //     if (err) {

@@ -1,14 +1,18 @@
 let mongoose = require("mongoose");
 
 const schema = new mongoose.Schema({
-    task: {
+    orderDate: {
         required: true,
         type: String
     },
-    date: {
+    orderTime: {
         required: true,
         type: String
     },
+    amount: {
+        required: true,
+        type: String
+    }
 });
 
-module.exports = mongoose.model("Task", schema);
+module.exports = mongoose.model("Order", schema);
