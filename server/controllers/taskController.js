@@ -11,3 +11,10 @@ module.exports.show = (req, res) => {
         return res.json(task)
     })
 }
+
+module.exports.create = (req, res) => {
+    const newTask = new taskModel(req.body)
+    newTask.save().then(task => {
+        return res.json(task)
+    })
+};

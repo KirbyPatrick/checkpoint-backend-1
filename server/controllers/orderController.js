@@ -11,3 +11,10 @@ module.exports.show = (req, res, next) => {
         return res.json(order)
     })
 };
+
+module.exports.create = (req, res) => {
+    const newOrder = new orderModel(req.body)
+    newOrder.save().then(order => {
+        return res.json(order)
+    })
+};

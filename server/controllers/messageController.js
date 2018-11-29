@@ -11,3 +11,10 @@ module.exports.show = (req, res, next) => {
         return res.json(message)
     })
 };
+
+module.exports.create = (req, res) => {
+    const newMessage = new messageModel(req.body)
+    newMessage.save().then(message => {
+        return res.json(message)
+    })
+};

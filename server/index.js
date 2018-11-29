@@ -7,7 +7,7 @@ const messageRoutes = require("./routes/messageRoutes");
 const orderRoutes = require("./routes/orderRoutes");
 const taskRoutes = require("./routes/taskRoutes");
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://checkpoint1_user:checkpoint1@ds259210.mlab.com:59210/checkpoint1")
+mongoose.connect("mongodb://checkpoint1_user:checkpoint1@ds259210.mlab.com:59210/checkpoint1");
 
 app.use(express.static("public"));
 
